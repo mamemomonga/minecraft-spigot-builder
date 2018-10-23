@@ -23,5 +23,5 @@ docker run --rm -i \
 
 docker volume remove $TMPNAME
 
-scp -S "$PUSH_SSH_CMD" var/spigot-$MINECRAFT_VERSION.jar $PUSH_SSH_PATH/spigot-$MINECRAFT_VERSION.jar
+cat var/spigot-$MINECRAFT_VERSION.jar | $PUSH_SSH_CMD "cat > $PUSH_SSH_PATH/spigot-$MINECRAFT_VERSION.jar"
 
